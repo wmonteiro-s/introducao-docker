@@ -2,6 +2,7 @@ import { Controller, Get, Post, Body, Patch, Param, Delete, Put } from '@nestjs/
 import { LivrosService } from './livros.service';
 import { CreateLivroDto } from './dto/create-livro.dto';
 import { UpdateLivroDto } from './dto/update-livro.dto';
+import { Livro } from '@prisma/client';
 
 @Controller('livros')
 export class LivrosController {
@@ -13,7 +14,7 @@ export class LivrosController {
   }
 
   @Get()
-  findAll() {
+  findAll(): Promise<Livro[]> {
     return this.livrosService.findAll();
   }
 
@@ -28,7 +29,7 @@ export class LivrosController {
   }
 
   @Delete(':id')
-  remove(@Param('id') id: string) {
+  delete(@Param('id') id: string) {
     return this.livrosService.remove(id);
   }
 }
