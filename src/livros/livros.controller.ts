@@ -4,9 +4,9 @@ import { CreateLivroDto } from './dto/create-livro.dto';
 import { UpdateLivroDto } from './dto/update-livro.dto';
 import { Livro } from '@prisma/client';
 import { ApiBearerAuth, ApiBody, ApiCreatedResponse, ApiOperation, ApiParam, ApiResponse } from '@nestjs/swagger';
-import { JwtAuthGuard } from 'src/auth/jwt.guard';
-import { AdminGuard } from 'src/auth/admin.guard';
-import { CommonGuard } from 'src/auth/common.guard';
+import { JwtAuthGuard } from '../auth/jwt.guard';
+import { AdminGuard } from '../auth/admin.guard';
+import { CommonGuard } from '../auth/common.guard';
 
 @ApiBearerAuth()
 @UseGuards(JwtAuthGuard)
