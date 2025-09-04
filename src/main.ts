@@ -11,6 +11,13 @@ async function bootstrap() {
   .setDescription('Documentação da API de livros com Swagger')
   .setVersion('1.0')
   .addTag('users')
+  .addBearerAuth({ //Esquema JWT Bearer
+    type:'http',
+    scheme: 'bearer',
+    bearerFormat:'JWT',
+    name: 'Authorization',
+    in: 'header'
+  })
   .build()
   
   const document = SwaggerModule.createDocument(app, config)
