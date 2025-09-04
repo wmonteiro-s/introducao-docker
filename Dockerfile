@@ -12,8 +12,8 @@ RUN npm install
 
 # Etapa 4: Copiar o restante dos arquivos e compilar
 COPY . .
-RUN npm run build
 RUN npx prisma generate
+RUN npm run build
 
 # Etapa 5: Expor a porta da aplicação
 EXPOSE 3001
