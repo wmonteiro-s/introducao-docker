@@ -24,7 +24,6 @@ export class LivrosController {
   }
 
   @Get()
-  @UseGuards(CommonGuard)
   @ApiOperation({ summary: 'Listar todos os livros'})
   @ApiResponse({ status: 200, description: 'Lista de Livros retornada com sucesso' })
   findAll(): Promise<Livro[]> {
@@ -32,7 +31,6 @@ export class LivrosController {
   }
 
   @Get(':id')
-  @UseGuards(CommonGuard)
   @ApiOperation({ summary: 'Buscar um livro por id' })
   @ApiResponse({ status: 200, description: 'Livro encontrado' })
   @ApiResponse({ status: 400, description: 'Livro não encontrado' })

@@ -16,4 +16,4 @@ RUN npx prisma generate
 RUN npm run build
 
 # Etapa 5: Expor a porta da aplicação
-EXPOSE 3001
+EXPOSE 3002
